@@ -54,9 +54,9 @@ const getFullname = (sWithoutHour)=>{
   return sWithoutHour.split(':')[0].trim();
 }
 const getSentance = (sWithoutHour)=>{
-  return sWithoutHour.split(':')[1].replace(/^\s/,"");
+  return sWithoutHour.split(':')[1].trimStart();
 }
-console.log(" Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n".replace(" ",""));
+// console.log(" Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n".replace(/^s+/,""));
 function extractDataFromChat(s,n,res){
   const h = extractDate(s);
   const stringWithoutHour = getStringWithoutHour(s,h.length);
@@ -92,5 +92,5 @@ export function solution(kata) {
   return parseResult(resultWithFullName);
 }
 
-console.log("solution: ", solution(kata6));
+// console.log("solution: ", solution(kata6));
 
